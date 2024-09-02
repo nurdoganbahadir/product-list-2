@@ -3,7 +3,11 @@ import { categories } from "../../helper/data";
 import React from "react";
 import Form from "react-bootstrap/Form";
 
-const Header = () => {
+const Header = ({ setSearch }) => {
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
   return (
     <div className="header">
       <h1>Product List</h1>
@@ -13,9 +17,10 @@ const Header = () => {
         ))}
       </div>
       <Form.Control
-        type="text"
+        type="search"
         placeholder="Search Product"
         className=" mr-sm-2 my-4 w-50 m-auto"
+        onChange={handleSearch}
       />
     </div>
   );
