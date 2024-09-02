@@ -1,1 +1,31 @@
-/*# sourceMappingURL=Header.css.map */
+.header {
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 3rem;
+}
+.header h1 {
+  margin-bottom: 1rem;
+  font-size: 2.3rem;
+  color: #cd890c;
+}
+.header .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.header .btns button {
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 1s;
+  text-transform: uppercase;
+}
+.header .btns button.active {
+  background-color: orangered;
+}
+.header .btns button:hover {
+  background-color: orangered;
+}/*# sourceMappingURL=Header.css.map */
