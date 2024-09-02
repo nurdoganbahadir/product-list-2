@@ -3,17 +3,21 @@ import { categories } from "../../helper/data";
 import React from "react";
 import Form from "react-bootstrap/Form";
 
-const Header = ({ setSearch }) => {
+const Header = ({ setSearch, setSelectedCategory }) => {
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category === "all" ? "" : category);
+  };
+
   return (
     <div className="header">
-      <h1>Product List</h1>
+      <h1>Products List</h1>
       <div className="btns">
         {categories.map((item) => (
-          <button>{item}</button>
+          <button onClick={() => handleCategoryClick(item)}>{item}</button>
         ))}
       </div>
       <Form.Control

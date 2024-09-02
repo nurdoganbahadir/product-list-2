@@ -6,14 +6,21 @@ import ProductList from "./components/Products/ProductList";
 
 function App() {
   const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
-  const filteredProducts = products.filter((products) =>
-    products.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory =
+      selectedCategory === "" || product.category === selectedCategory;
+    const matchesSearch =
+      search === "" ||
+      product.title.toLowerCase().includes(search.toLowerCase());
+
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <>
-      <Header setSearch={setSearch} />
+      <Header setSearch={setSearch} setSelectedCategory={setSelectedCategory} />
       <ProductList filteredProducts={filteredProducts} />
     </>
   );
