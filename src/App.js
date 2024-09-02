@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Header setSearch={setSearch} setSelectedCategory={setSelectedCategory} />
+      <Header setSearch={setSearch} setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory}/>
       <ProductList filteredProducts={filteredProducts} />
     </>
   );

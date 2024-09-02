@@ -268,7 +268,6 @@ export const products = [
 ];
 
 export const categories = [
-  "all",
   "electronics",
   "jewelery",
   "men's clothing",
